@@ -1,0 +1,15 @@
+************************************************************************************
+
+Projekt Dubtrack Backup
+
+************************************************************************************
+
+Formålet med dette projekt er at sikre at min musik på dubtrack forbliver entakt, selv
+hvis siden går ned. 
+
+Slutproduktet: 
+
+- En enter sepereret liste af alle youtube siderne med min musik
+
+sekundære krav:
+- En grupering af numrene op lige fod med dem på siden
