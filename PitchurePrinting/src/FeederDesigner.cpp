@@ -292,22 +292,24 @@ void FeederDesigner::climpAngle(vector<vector<Vector3D<float>>> &aPlane, double 
 void FeederDesigner::addBorderPoint(vector<vector<Vector3D<float>>> &aPlane, bool isPrintable) {
 
     vector<Vector3D<float>> segment(aPlane[0].size() + 3);
-    Vector3D<float> p1 = {0,0,0};
-    Vector3D<float> p2 = {0,1,0};
-    Vector3D<float> p3 = {0,1,1};
+    Vector3D<float> p1 = {0,0,1};
+    Vector3D<float> p2 = {0,0,0};
+    //Vector3D<float> p3 = {0,1,1};
 
     // Add the border points
     for(unsigned int i = 0; i < aPlane.size(); i++){
         p1[0] = aPlane[i][0][0];
         p2[0] = aPlane[i][0][0];
-        p3[0] = aPlane[i][0][0];
+        //p3[0] = aPlane[i][0][0];
 
-        aPlane[i].push_back(p1);
 
-        if (isPrintable)
+
+        if (isPrintable){
+            aPlane[i].push_back(p1);
             aPlane[i].push_back(p2);
+        }
 
-        aPlane[i].push_back(p3);
+        //aPlane[i].push_back(p3);
     }
 
 }

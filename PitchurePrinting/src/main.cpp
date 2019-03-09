@@ -22,6 +22,11 @@ int main(){
 
     vector<float> crossSection;
     vector<float> stepSizes;
+
+
+    testImage.showImage("0");
+    testImage.addBorders(10);
+    testImage.showImage("1");
     testImage.generateSurface(crossSection, stepSizes);
 
 

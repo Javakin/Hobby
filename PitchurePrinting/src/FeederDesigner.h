@@ -31,7 +31,7 @@
 #define MAX_SEGMENT_LENGTH  0.08       // measurements in meters
 #define MINIMUM_RESOLUTION  0.5      // measurements in meters
 #define BOWL_RADIUS         0.2       // measurements in meters from the center of the shape
-#define IS_PRINTABLE        0
+#define IS_PRINTABLE        1
 #define IS_BOWL_FEEDER      1
 
 

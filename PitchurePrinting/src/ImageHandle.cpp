@@ -30,7 +30,7 @@ void ImageHandle::generateSurface(vector<float>& aPlane, vector<float>& stepSize
     stepSizes.clear();
 
     // Set stepSizes
-    stepSizes = vector<float>(image.cols, width/image.cols);
+    stepSizes = vector<float>((unsigned long)image.cols, (unsigned long)(width/image.cols));
 
     // Set the point values
     Scalar test;
@@ -57,4 +57,10 @@ int ImageHandle::getCols() {
 
 double ImageHandle::getImageHeight() {
     return width*((double)image.rows/(double)image.cols);
+}
+
+void ImageHandle::addBorders(double) {
+    //value = Scalar( rng.uniform(0, 255), rng.uniform(0, 255), rng.uniform(0, 255) );
+    copyMakeBorder( image, image, 10, 10, 10, 10, BORDER_CONSTANT, Scalar(0,0,0));
+
 }
