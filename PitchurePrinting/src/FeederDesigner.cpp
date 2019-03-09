@@ -84,12 +84,12 @@ bool FeederDesigner::save(string fileName,  double climbAngle, bool isPrintable,
     }
 
     // Test for the surfaces not overlapping  todo
-    if(!isValidFeeder(isPrintable)){
+    /*if(!isValidFeeder(isPrintable)){
         cout << "Collision detected" << endl;
         //return false;
     }else{
         cout << "Fine Build" << endl;
-    }
+    }*/
 
 
     // Transform the feeder
@@ -246,7 +246,7 @@ void FeederDesigner::mutate(double mutationProb, double range) {
 vector<Vector3D<float>> FeederDesigner::flatSection(unsigned int numberOfPoints, double inwardsAngle) {
     // Precondition
     vector<Vector3D<float>> output;
-    vector<Vector3D<float>> points = {{0, 0.5, 1}, {0, 0.5, 0.5}, {0, 0, (float)(0.5 + (0.5 * tan(inwardsAngle * PI / 180.0)))}};
+    vector<Vector3D<float>> points = {{0, 1, 0}, {0, 1, 0.5}, {0, 1, 1}};
 
     vector<unsigned int> segmentSize(2, 1);
 

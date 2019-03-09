@@ -28,7 +28,7 @@ int main(){
 
     // Generarte feeder
     FeederDesigner feeder(testImage.getRows(), INWARDS_ANGLE, MINIMUM_RESOLUTION);
-    feeder.scaleFeeder(IMAGE_THIKNESS, testImage.getImageHeight(), IMAGE_WIDTH/testImage.getCols());
+    feeder.scaleFeeder(IMAGE_THIKNESS, testImage.getImageHeight(), 1);
 
     //
 

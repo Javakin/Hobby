@@ -29,10 +29,10 @@
 #define MAX_TRACK_WITH      0.04       // measurements in meters
 #define MAX_TRACK_HEIGHT    0.02       // measurements in meters
 #define MAX_SEGMENT_LENGTH  0.08       // measurements in meters
-#define MINIMUM_RESOLUTION  0.005      // measurements in meters
-#define BOWL_RADIUS         0.1       // measurements in meters from the center of the shape
+#define MINIMUM_RESOLUTION  0.5      // measurements in meters
+#define BOWL_RADIUS         0.2       // measurements in meters from the center of the shape
 #define IS_PRINTABLE        0
-#define IS_BOWL_FEEDER      0
+#define IS_BOWL_FEEDER      1
 
 
 using namespace std;
