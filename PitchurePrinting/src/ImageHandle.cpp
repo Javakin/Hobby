@@ -30,7 +30,7 @@ void ImageHandle::generateSurface(vector<float>& aPlane, vector<float>& stepSize
     stepSizes.clear();
 
     // Set stepSizes
-    stepSizes = vector<float>((unsigned long)image.cols, (unsigned long)(width/image.cols));
+    stepSizes = vector<float>((unsigned long)image.cols, (float)(width/image.cols));
 
     // Set the point values
     Scalar test;
@@ -39,7 +39,7 @@ void ImageHandle::generateSurface(vector<float>& aPlane, vector<float>& stepSize
             test = image.at<uchar>(r, c);
 
             // Set Y component
-            aPlane.push_back((float)(1.0 - (test[0]/255.0)*(minThikness/thikness)));
+            aPlane.push_back((float)(1.0 - (test[0]/255.0)*((thikness - minThikness)/thikness)));
 
             // Set Z component
             aPlane.push_back((float)((double)r/(double)image.rows));
@@ -59,8 +59,11 @@ double ImageHandle::getImageHeight() {
     return width*((double)image.rows/(double)image.cols);
 }
 
-void ImageHandle::addBorders(double) {
-    //value = Scalar( rng.uniform(0, 255), rng.uniform(0, 255), rng.uniform(0, 255) );
-    copyMakeBorder( image, image, 10, 10, 10, 10, BORDER_CONSTANT, Scalar(0,0,0));
+void ImageHandle::addBorders(double borderThikness) {
+    double pixelPrM = image.cols/width;
+
+    auto L = (unsigned int)ceil(borderThikness*pixelPrM);
+
+    copyMakeBorder( image, image, L, L, L, L, BORDER_CONSTANT, Scalar(0,0,0));
 
 }

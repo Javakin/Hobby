@@ -9,9 +9,9 @@
 #include <iostream>
 #include <opencv2/opencv.hpp>
 
-#define IMAGE_THIKNESS          0.005/2    // in m
-#define IMAGE_MINIMUM_THIKNESS  0.005/2   // in m
-#define IMAGE_WIDTH             0.1      // in m
+#define IMAGE_THIKNESS          0.005    // in m
+#define IMAGE_MINIMUM_THIKNESS  0.0008   // in m
+#define IMAGE_WIDTH             0.2      // in m
 
 
 using namespace std;

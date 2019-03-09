@@ -24,9 +24,8 @@ int main(){
     vector<float> stepSizes;
 
 
-    testImage.showImage("0");
-    testImage.addBorders(10);
-    testImage.showImage("1");
+
+    testImage.addBorders(0.005);
     testImage.generateSurface(crossSection, stepSizes);
 
 
@@ -39,6 +38,7 @@ int main(){
 
     feeder.addLineFeeder(crossSection, testImage.getRows(), stepSizes);
 
+    cout << "Save feeder " << endl;
     feeder.save("/home/daniel/Desktop/git/Hobby/PitchurePrinting/TestImage.stl",  CLIMB_ANGLE, IS_PRINTABLE, IS_BOWL_FEEDER, BOWL_RADIUS);
     //feeder.save("/home/daniel/Desktop/git/9.semester/hardwareConfigurator/data/AI4_Project/sceneFiles/STL-files/tracks/Gen0/TestBowl00.stl",  CLIMB_ANGLE, IS_PRINTABLE, IS_BOWL_FEEDER, BOWL_RADIUS);
     //feeder.save("/home/daniel/Desktop/Github/9.semester/Designer/TestBowl0.stl",  CLIMB_ANGLE, IS_PRINTABLE, IS_BOWL_FEEDER, BOWL_RADIUS);          //*/
