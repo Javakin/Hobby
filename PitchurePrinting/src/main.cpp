@@ -19,27 +19,22 @@ int main(){
     string aFileName = "/home/daniel/Desktop/git/Hobby/PitchurePrinting/guess_ill_die.png";
     ImageHandle testImage(aFileName, IMAGE_WIDTH, IMAGE_THIKNESS, IMAGE_MINIMUM_THIKNESS);
 
-
     vector<float> crossSection;
     vector<float> stepSizes;
-
-
 
     testImage.addBorders(0.005);
     testImage.generateSurface(crossSection, stepSizes);
 
 
-
     // Generarte feeder
     FeederDesigner feeder(testImage.getRows(), INWARDS_ANGLE, MINIMUM_RESOLUTION);
-    feeder.scaleFeeder(IMAGE_THIKNESS, testImage.getImageHeight(), 1);
+    feeder.scaleFeeder(IMAGE_THIKNESS*1000, testImage.getImageHeight()*1000, 1000);
 
-    //
 
     feeder.addLineFeeder(crossSection, testImage.getRows(), stepSizes);
 
     cout << "Save feeder " << endl;
-    feeder.save("/home/daniel/Desktop/git/Hobby/PitchurePrinting/TestImage.stl",  CLIMB_ANGLE, IS_PRINTABLE, IS_BOWL_FEEDER, BOWL_RADIUS);
+    feeder.save("/home/daniel/Desktop/git/Hobby/PitchurePrinting/TestImage.stl",  CLIMB_ANGLE, IS_PRINTABLE, IS_BOWL_FEEDER, BOWL_RADIUS*1000);
     //feeder.save("/home/daniel/Desktop/git/9.semester/hardwareConfigurator/data/AI4_Project/sceneFiles/STL-files/tracks/Gen0/TestBowl00.stl",  CLIMB_ANGLE, IS_PRINTABLE, IS_BOWL_FEEDER, BOWL_RADIUS);
     //feeder.save("/home/daniel/Desktop/Github/9.semester/Designer/TestBowl0.stl",  CLIMB_ANGLE, IS_PRINTABLE, IS_BOWL_FEEDER, BOWL_RADIUS);          //*/
 

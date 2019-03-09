@@ -36,7 +36,7 @@ void ImageHandle::generateSurface(vector<float>& aPlane, vector<float>& stepSize
     Scalar test;
     for (unsigned int c = 0; c < image.cols; c++){
         for (unsigned int r = 0; r < image.rows; r++){
-            test = image.at<uchar>(r, c);
+            test = image.at<uchar>(image.rows - r, image.cols - c);
 
             // Set Y component
             aPlane.push_back((float)(1.0 - (test[0]/255.0)*((thikness - minThikness)/thikness)));
