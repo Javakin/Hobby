@@ -77,5 +77,5 @@ ENDIF()
 set(CMAKE_CXX_FLAGS_DEBUG "${CMAKE_CXX_FLAGS_DEBUG} -O0")
 
 
-add_executable(design src/main.cpp src/PartDesigner.cpp src/PartDesigner.h src/FeederDesigner.cpp src/FeederDesigner.h)
+add_executable(design src/main.cpp src/PartDesigner.cpp src/PartDesigner.h src/FeederDesigner.cpp src/FeederDesigner.h src/ImageHandle.cpp src/ImageHandle.h)
 target_link_libraries( design ${OpenCV_LIBS} ${ROBWORK_LIBRARIES} ${ROBWORKSIM_LIBRARIES})

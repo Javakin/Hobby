@@ -23,16 +23,16 @@
 
 #define PI 3.14159265
 
-#define INWARDS_ANGLE       5.0
-#define CLIMB_ANGLE         2.0
+#define INWARDS_ANGLE       0.0
+#define CLIMB_ANGLE         0.0
 #define NUMBER_OF_POINTS    7
 #define MAX_TRACK_WITH      0.04       // measurements in meters
 #define MAX_TRACK_HEIGHT    0.02       // measurements in meters
 #define MAX_SEGMENT_LENGTH  0.08       // measurements in meters
 #define MINIMUM_RESOLUTION  0.005      // measurements in meters
 #define BOWL_RADIUS         0.1       // measurements in meters from the center of the shape
-#define IS_PRINTABLE        1
-#define IS_BOWL_FEEDER      1
+#define IS_PRINTABLE        0
+#define IS_BOWL_FEEDER      0
 
 
 using namespace std;
