@@ -71,3 +71,35 @@ void ImageHandle::addBorders(double borderThikness) {
 void ImageHandle::normalize() {
     cv::normalize(image, image, 0, 255, NORM_MINMAX, CV_8UC3);
 }
+
+// Angle is in degrees
+void ImageHandle::addSupport(double angle) {
+    // Preconditions
+    if(angle < 10 || angle > 90){
+        cerr << "Angle must be in the range 0 to 80 degrees, " << angle << " was typed." << endl;
+    }
+
+    // For each point in pitchure
+    Scalar pixel1, pixel2;
+    double maxColGrad = maximumOverhang(angle);
+    for(int r = 0; r < image.rows - 1; r++){
+        for (int c = 0; c < image.cols; c++){
+            pixel1 = image.at<uchar>(r, c);
+            pixel2 = image.at<uchar>(r + 1, c);
+
+            // Check if the slope is to steep
+            if(pixel1[0]-pixel2[0] < -maxColGrad){
+                pixel2[0] = pixel1[0] + floor(maxColGrad);
+                image.at<uchar>(r + 1, c) = (uchar)pixel2[0];
+            }
+
+        }
+    }
+
+}
+
+double ImageHandle::maximumOverhang(double angle) {
+    double mPrPix = (width/(double)image.cols);
+    double mPrDc = (thikness-minThikness)/255.0;
+    return (mPrPix*tan(angle*PI/180.0))/mPrDc;
+}

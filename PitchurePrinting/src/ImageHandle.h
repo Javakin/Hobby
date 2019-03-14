@@ -13,6 +13,8 @@
 #define IMAGE_MINIMUM_THIKNESS  0.0008   // in m
 #define IMAGE_WIDTH             0.1      // in m
 
+#define PI                      3.14159265359
+
 
 using namespace std;
 using namespace cv;
@@ -28,6 +30,8 @@ public:
     int getCols();
     double getImageHeight();
 
+    double maximumOverhang(double angle);
+    void addSupport(double angle);
     void normalize();
 
 private:

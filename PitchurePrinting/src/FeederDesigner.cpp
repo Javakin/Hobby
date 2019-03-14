@@ -391,8 +391,8 @@ void FeederDesigner::lineToHelicalBowl(vector<vector<Vector3D<float>>> &triangle
     for (unsigned int i = 0; i < triangles.size(); i++){
         for (unsigned int j = 0; j < 3; j++){
             aTriangle = triangles[i][j];
-            triangles[i][j][0] = (float)(((double)aTriangle[1] - feederWith/2 + minR)*cos( ((double)aTriangle[0])/(minR)));
-            triangles[i][j][1] = (float)(((double)aTriangle[1] - feederWith/2 + minR)*sin( -((double)aTriangle[0])/(minR)));
+            triangles[i][j][0] = (float)(((double)aTriangle[1] - feederWith/2 + minR)*cos(((double)aTriangle[0])/(minR)));
+            triangles[i][j][1] = (float)(((double)aTriangle[1] - feederWith/2 + minR)*sin(-((double)aTriangle[0])/(minR)));
         }
     }
 
