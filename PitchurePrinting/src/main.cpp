@@ -16,7 +16,9 @@ using namespace rw::math;
 
 
 int main(){
-    string aFileName = "/home/daniel/Desktop/git/Hobby/PitchurePrinting/guess_ill_die.png";
+    //string aFileName = "/home/daniel/Desktop/git/Hobby/PitchurePrinting/guess_ill_die.png";
+    string aFileName = "/home/daniel/Desktop/git/Hobby/PitchurePrinting/cat_and_pancakes.jpg";
+
     ImageHandle testImage(aFileName, IMAGE_WIDTH, IMAGE_THIKNESS, IMAGE_MINIMUM_THIKNESS);
 
     vector<float> crossSection;
