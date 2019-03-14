@@ -17,14 +17,22 @@ using namespace rw::math;
 
 int main(){
     //string aFileName = "/home/daniel/Desktop/git/Hobby/PitchurePrinting/guess_ill_die.png";
-    string aFileName = "/home/daniel/Desktop/git/Hobby/PitchurePrinting/cat_and_pancakes.jpg";
+    string aFileName = "/home/daniel/Desktop/Github/Hobby/PitchurePrinting/guess_ill_die.png";
+    //string aFileName = "/home/daniel/Desktop/git/Hobby/PitchurePrinting/cat_and_pancakes.jpg";
 
     ImageHandle testImage(aFileName, IMAGE_WIDTH, IMAGE_THIKNESS, IMAGE_MINIMUM_THIKNESS);
 
     vector<float> crossSection;
     vector<float> stepSizes;
 
-    testImage.addBorders(0.005);
+    //testImage.addBorders(0.005);
+
+    testImage.showImage("original");
+    testImage.normalize();
+    testImage.showImage("normalized");
+
+
+
     testImage.generateSurface(crossSection, stepSizes);
 
 

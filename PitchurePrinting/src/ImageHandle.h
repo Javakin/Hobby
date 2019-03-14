@@ -28,6 +28,8 @@ public:
     int getCols();
     double getImageHeight();
 
+    void normalize();
+
 private:
     Mat image;
     double width, thikness, minThikness;

@@ -67,3 +67,7 @@ void ImageHandle::addBorders(double borderThikness) {
     copyMakeBorder( image, image, L, L, L, L, BORDER_CONSTANT, Scalar(0,0,0));
 
 }
+
+void ImageHandle::normalize() {
+    cv::normalize(image, image, 0, 255, NORM_MINMAX, CV_8UC3);
+}
